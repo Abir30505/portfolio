@@ -11,9 +11,9 @@ import Login from './components/login';
 
 const App = () => {
   return (
-    <div className='main-div'>
+    <div className='main-div position-relative'>
       <Router>
-        <Navbar className='nav'/> 
+        <Navbar/> 
         <Routes>
           <Route path='/' element={<Home />} /> 
           <Route path='/about' element={<About />} /> {/* About  */}

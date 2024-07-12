@@ -80,3 +80,10 @@ body{
   display: flex;
   justify-content: center;
 }
+.border-right-none{
+  border-right: none;
+  outline: none;
+}
+.fas:hover{
+  color: #fff !important;
+}

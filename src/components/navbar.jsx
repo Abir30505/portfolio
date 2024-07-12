@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./searchbar";
+
 
 const Navbar = () => {
   const [barIsActive, setBarIsActive] = useState(true);
@@ -17,25 +19,35 @@ const Navbar = () => {
 
   return (
     <div className={`nav mt-sm-3   ${barIsActive ? 'null': 'nav-div '}  `}>
-            <div className="icon d-block d-sm-none m-4">
-        <i
-          className={`fa-solid fa-bars ${barIsActive ? "active" : "inactive"}`}
-          onClick={barClick}
-        ></i>
-        <i
-          className={`fa-solid fa-xmark ${crossIsActive ? "active" : "inactive"
-            }`}
-          onClick={crossClick}
-        ></i>
-            </div>
+           <div className="small-nav d-flex align-items-center">
+           <div className="icon d-flex d-sm-none m-4">
+      
+                  <i
+                      className={`fa-solid mt-2 fa-bars ${barIsActive ? "active" : "inactive"}`}
+                    onClick={barClick}
+                     ></i>
+                    <i
+                       className={`fa-solid mt-2 fa-xmark ${crossIsActive ? "active" : "inactive"
+                     }`}
+                    onClick={crossClick}
+                     ></i>
+          
+          </div>
+          <div className={`d-sm-none ${barIsActive ? 'd-block': 'd-none'}`}>
+          <SearchBar/> 
+          </div>
+           </div>
             <div
         className={`  nav-content  gap-4 ${barIsActive ? "d-none d-sm-flex" : "d-flex flex-column align-items-center m-3"
           }`}
       >
+
+       
         <div
           className={`list-item d-flex flex-column mx-3 flex-sm-row gap-2 gap-sm-4 mx-2 ${barIsActive ? "d-none d-sm-flex" : "d-block d-sm-flex"
             }`}
         >
+          <div className="d-none d-sm-block">  <SearchBar/></div>
           <li key="home" className="list">
             <Link  to="/" className="link">Home</Link>
           </li>

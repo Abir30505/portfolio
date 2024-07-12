@@ -2,16 +2,17 @@ import React from "react";
 
 const Product = ({ name, price, image }) => {
   return (
-          <div className="product bg-warning">
+          <div className="product bg-light">
             <div className="image">
-              <img src={image} alt="" />
+              <img className="rounded-circle" src={image} alt="" />
             </div>
             <div className="name-price">
-            <h6 className="mt-1">price:{price}</h6><h6>{name}</h6>
+            <h6 className="mt-1">Tk.{price}
+            </h6>
+            <h6>{name}</h6>
             </div>
-            <div className=" product-btn d-flex justify-content-center align-item-center">
-              <button className="btn btn-dark btn-sm">Buy</button>
-            </div>
+              <button className="btn btn-dark btn-sm btn-block px-5 m-0">Buy</button>
+            
           </div>
   );
 };
